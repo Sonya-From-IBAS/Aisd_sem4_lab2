@@ -90,6 +90,7 @@ stats combSort(std::vector<int>::iterator begin, std::vector<int>::iterator end,
     return resultStat;
 }
 
+//function for calculating average values of 100 attempts of sotring by insert sort. Accepts the number of array elements
 stats onAverageInsertSort(size_t vectLenght) {
     stats resultStat;
     for (size_t i = 0; i < 100; i++)
@@ -108,6 +109,8 @@ stats onAverageInsertSort(size_t vectLenght) {
     std::cout << "onAverageInsertSort:\nvectLenght - " << vectLenght << " numbers,\ntime -  " << resultStat.sortTime / 100 << " microseconds,\ncomparison count - " << resultStat.comparison_count / 100 << " times,\ncopy count - " << resultStat.copy_count / 100 << " times\n" << std::endl;
     return resultStat;
 }
+
+//function for calculating average values of 100 attempts of sotring by shaker sort. Accepts the number of array elements
 stats onAverageShakerSort(size_t vectLenght) {
     stats resultStat;
     for (size_t i = 0; i < 100; i++)
@@ -126,6 +129,8 @@ stats onAverageShakerSort(size_t vectLenght) {
     std::cout << "onAverageShakerSort:\nvectLenght - " << vectLenght << " numbers,\ntime -  " << resultStat.sortTime / 100 << " microseconds,\ncomparison count - " << resultStat.comparison_count / 100 << " times,\ncopy count - " << resultStat.copy_count / 100 << " times\n" << std::endl;
     return resultStat;
 }
+
+//function for calculating average values of 100 attempts of sotring by comb sort. Accepts the number of array elements
 stats onAverageCombSort(size_t vectLenght) {
     stats resultStat;
     for (size_t i = 0; i < 100; i++)
@@ -145,7 +150,8 @@ stats onAverageCombSort(size_t vectLenght) {
     return resultStat;
 }
 
-stats onSortedInsertSort(size_t vectLenght){
+//function for calculating the values of an already sorted array of sorting by insert sort. Accepts the number of array elements
+stats onSortedInsertSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
     for (size_t i = 0; i < vectLenght; i++)
@@ -159,11 +165,13 @@ stats onSortedInsertSort(size_t vectLenght){
     resultStat.sortTime += currentStat.sortTime;
     std::cout << "onSortedInsertSort:\nvectLenght - " << vectLenght;
     std::cout << " numbers,\ntime -  " << resultStat.sortTime;
-    std::cout  << " microseconds,\ncomparison count - " << resultStat.comparison_count;
-    std::cout  << " times,\ncopy count - " << resultStat.copy_count<< " times\n" << std::endl;
+    std::cout << " microseconds,\ncomparison count - " << resultStat.comparison_count;
+    std::cout << " times,\ncopy count - " << resultStat.copy_count << " times\n" << std::endl;
     return resultStat;
 }
-stats onSortedShakerSort(size_t vectLenght){
+
+//function for calculating the values of an already sorted array of sorting by shaker sort. Accepts the number of array elements
+stats onSortedShakerSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
     for (size_t i = 0; i < vectLenght; i++)
@@ -178,10 +186,12 @@ stats onSortedShakerSort(size_t vectLenght){
     std::cout << "onSortedShakerSort:\nvectLenght - " << vectLenght;
     std::cout << " numbers,\ntime -  " << resultStat.sortTime;
     std::cout << " microseconds,\ncomparison count - " << resultStat.comparison_count;
-    std::cout << " times,\ncopy count - " << resultStat.copy_count<< " times\n" << std::endl;
+    std::cout << " times,\ncopy count - " << resultStat.copy_count << " times\n" << std::endl;
     return resultStat;
 }
-stats onSortedCombSort(size_t vectLenght){
+
+//function for calculating the values of an already sorted array of sorting by comb sort. Accepts the number of array elements
+stats onSortedCombSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
     for (size_t i = 0; i < vectLenght; i++)
@@ -196,10 +206,12 @@ stats onSortedCombSort(size_t vectLenght){
     std::cout << "onSortedCombSort:\nvectLenght - " << vectLenght;
     std::cout << " numbers,\ntime -  " << resultStat.sortTime;
     std::cout << " microseconds,\ncomparison count - " << resultStat.comparison_count;
-    std::cout << " times,\ncopy count - " << resultStat.copy_count<< " times\n" << std::endl;
+    std::cout << " times,\ncopy count - " << resultStat.copy_count << " times\n" << std::endl;
     return resultStat;
 }
 
+
+//function for calculating the values of reverse sorted array of sorting by insert sort. Accepts the number of array elements
 stats onReversedSortedInsertSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
@@ -218,6 +230,8 @@ stats onReversedSortedInsertSort(size_t vectLenght) {
     std::cout << " times,\ncopy count - " << resultStat.copy_count << " times\n" << std::endl;
     return resultStat;
 }
+
+//function for calculating the values of reverse sorted array of sorting by shaker sort. Accepts the number of array elements
 stats onReversedSortedShakerSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
@@ -236,6 +250,8 @@ stats onReversedSortedShakerSort(size_t vectLenght) {
     std::cout << " times,\ncopy count - " << resultStat.copy_count << " times\n" << std::endl;
     return resultStat;
 }
+
+//function for calculating the values of reverse sorted array of sorting by comb sort. Accepts the number of array elements
 stats onReversedSortedCombSort(size_t vectLenght) {
     stats resultStat;
     std::vector<int> vect;
@@ -377,7 +393,7 @@ int main()
             {
                 system("cls");
                 std::cout << "You have selected non - existent option, try it again." << std::endl;
-                break; 
+                break;
             }
             }
             break;
@@ -415,7 +431,7 @@ int main()
                 onAverageCombSort(i);
             }
 
-            /*std::cout << "\n\n\n" << std::endl;
+            std::cout << "\n\n\n" << std::endl;
             std::cout << "SORTED SORT" << std::endl;
             for (auto i : vect) {
                 onSortedInsertSort(i);
@@ -441,12 +457,12 @@ int main()
             std::cout << "\n\n\n" << std::endl;
             for (auto i : vect) {
                 onReversedSortedCombSort(i);
-            }*/
+            }
 
 
             break;
         }
-        
+
         case 3:
         {
             programm_runner = false;
@@ -465,53 +481,3 @@ int main()
         system("cls");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*std::vector<int> vect;
-    for (size_t i = 0; i < 40; i++)
-    {
-        vect.push_back(lcg());
-    }
-    vect.push_back(7);
-    vect.push_back(0);
-    vect.push_back(-4);
-    vect.push_back(3);
-    vect.push_back(1);
-    vect.push_back(-2);
-    vect.push_back(5);
-    std::vector<int>::iterator it1 = vect.begin();
-    std::vector<int>::iterator it2 = vect.end();
-    if(it2>it1){
-        std::cout << "it2>it1";
-    }
-    for (auto i : vect) {
-        std::cout << i << " ";
-    }
-    std::cout << "\n";
-
-    combSort(vect.begin(), vect.end(), vect);
-    for (auto i : vect) {
-        std::cout << i << " ";
-    }
-    insertSort(vect.begin(), vect.end());
-    for (auto i : vect) {
-        std::cout << i << " ";
-    }
-
-    std::cout << "Hello World!\n";*/
